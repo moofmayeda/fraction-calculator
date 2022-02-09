@@ -11,6 +11,9 @@ class FractionCalculatorService
 
   def call
     operands_and_operators = OperationsService.call(calculation)
-    1
+    eval_string = operands_and_operators.reduce("") do |acc, op|
+      acc << op.to_string_notation
+    end
+    rational_result = eval(eval_string)
   end
 end

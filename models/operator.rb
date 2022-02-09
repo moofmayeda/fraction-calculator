@@ -11,4 +11,8 @@ class Operator
   end
 
   attr_reader :method
+
+  def to_string_notation
+    method.to_s
+  end
 end

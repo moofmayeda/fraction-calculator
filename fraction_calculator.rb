@@ -1,3 +1,4 @@
+require './helpers/rational_helpers'
 require './services/fraction_calculator_service'
 require './services/operations_service'
 require './models/operator'

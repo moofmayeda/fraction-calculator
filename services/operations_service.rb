@@ -14,7 +14,7 @@ class OperationsService
       if i.even?
         Rational(op)
       else
-        Operator.new(op).method
+        Operator.new(op)
       end
     end
   end
