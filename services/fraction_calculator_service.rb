@@ -10,6 +10,7 @@ class FractionCalculatorService
   attr_reader :calculation
 
   def call
+    operands_and_operators = OperationsService.call(calculation)
     1
   end
 end

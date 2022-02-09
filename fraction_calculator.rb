@@ -1,4 +1,6 @@
 require './services/fraction_calculator_service'
+require './services/operations_service'
+require './models/operator'
 
 input = nil
 while input != "quit"
