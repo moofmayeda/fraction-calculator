@@ -7,7 +7,11 @@ input = nil
 while input != "quit"
   if input
     result = FractionCalculatorService.call(input)
-    puts "Your result is: #{result}"
+    if result.success
+      puts "Your result is: #{result.rational}"
+    else
+      puts "Invalid request. Your calculation must begin and end with valid operands. Only + - * / are valid operators."
+    end
   end
   puts "Enter a calculation or type 'quit' to exit. What would you like to calculate?"
   input = gets.chomp

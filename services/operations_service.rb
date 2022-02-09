@@ -12,7 +12,7 @@ class OperationsService
   def call
     operations.split(" ").map.with_index do |op, i|
       if i.even?
-        Rational(op)
+        Rational.from_expanded_format(op)
       else
         Operator.new(op)
       end
