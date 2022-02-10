@@ -1,5 +1,5 @@
 class FractionCalculatorService
-  Result = Struct.new(:rational, :error, keyword_init: true) do
+  Result = Struct.new(:rational, :expanded_format, :error, keyword_init: true) do
     def success
       error.nil?
     end
@@ -21,7 +21,7 @@ class FractionCalculatorService
       acc << op.to_string_notation
     end
     rational_result = eval(eval_string)
-    Result.new(rational: rational_result)
+    Result.new(rational: rational_result, expanded_format: rational_result&.to_expanded_format)
   rescue ArgumentError, SyntaxError => e
     Result.new(error: e)
   end

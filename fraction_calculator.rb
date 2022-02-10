@@ -8,7 +8,7 @@ while input != "quit"
   if input
     result = FractionCalculatorService.call(input)
     if result.success
-      puts "Your result is: #{result.rational}"
+      puts "Your result is: #{result.expanded_format}"
     else
       puts "Invalid request. Your calculation must begin and end with valid operands. Only + - * / are valid operators."
     end
