@@ -9,7 +9,12 @@ module RationalHelpers
         whole, part, *remainder = fraction.split("_")
         raise ArgumentError if remainder.size > 0
         total = Rational(whole)
-        total += Rational(part)
+        if !total.negative?
+          total += Rational(part)
+        else
+          total -= Rational(part)
+        end
+        total
       else
         Rational(fraction)
       end

@@ -14,6 +14,10 @@ RSpec.describe RationalHelpers do
 
     it { expect(Rational.from_expanded_format("0_5/3")).to eq 5/3r }
 
+    it "handles negative fractions" do
+      expect(Rational.from_expanded_format("-1_1/3")).to eq -4/3r
+    end
+
     it "raises an error if the fraction is invalid" do
       expect { Rational.from_expanded_format("1_1/2_1/3")}.to raise_error ArgumentError
     end
