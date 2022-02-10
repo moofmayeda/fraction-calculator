@@ -3,6 +3,7 @@ require '../services/fraction_calculator_service'
 
 RSpec.describe FractionCalculatorService do
   it { expect(described_class.call("1/2 + 2/3").rational).to eq 7/6r }
+  it { expect(described_class.call(" 1/2 +  2/3 ").rational).to eq 7/6r }
   it { expect(described_class.call("1_1/2 + 2/3").rational).to eq 13/6r }
   it { expect(described_class.call("1_1/2 + 2/3 - 1/6").rational).to eq 2 }
   it { expect(described_class.call("1 + 2 * 3").rational).to eq 7 }
